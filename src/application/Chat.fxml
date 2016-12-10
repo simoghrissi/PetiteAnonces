@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="612.0" prefWidth="445.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Chat">
+   <children>
+      <SplitPane fx:id="splitpaneCont" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0">
+         <items>
+            <TabPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="437.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Chat">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="listChat" editable="false" layoutX="6.0" layoutY="7.0" prefHeight="494.0" prefWidth="422.0" />
+                              <TextArea fx:id="fieldChat" layoutX="21.0" layoutY="510.0" prefHeight="42.0" prefWidth="234.0" />
+                              <Button fx:id="send" layoutX="289.0" layoutY="518.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="26.0" prefWidth="64.0" text="Send" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabListAnnonce" text="List annonce">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="textAnnonceList" editable="false" layoutX="9.0" layoutY="4.0" prefHeight="549.0" prefWidth="420.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tablistMessage" onSelectionChanged="#clickChanged" text="List Message">
+                    <content>
+                      <AnchorPane fx:id="paneMessage" minHeight="0.0" minWidth="0.0" prefHeight="565.0" prefWidth="437.0">
+                           <children>
+                              <TextArea fx:id="listMessage" editable="false" layoutX="9.0" layoutY="4.0" prefHeight="551.0" prefWidth="419.0" />
+                           </children></AnchorPane>
+                    </content>
+                     <graphic>
+                        <Label fx:id="labeNotif" contentDisplay="RIGHT" text="    " />
+                     </graphic>
+                  </Tab>
+                  <Tab text="Utils">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnEnvoyerA" layoutX="231.0" layoutY="39.0" mnemonicParsing="false" onAction="#envoyerAnnonce" prefHeight="26.0" prefWidth="132.0" text="envoyer annoncer" />
+                              <Button fx:id="bouttonSuppAnonce" layoutX="230.0" layoutY="82.0" mnemonicParsing="false" onAction="#supprimerAnonce" prefHeight="26.0" prefWidth="135.0" text="supprimer annonce" />
+                              <Button fx:id="btnQuitter" layoutX="91.0" layoutY="169.0" mnemonicParsing="false" onAction="#quitterApplication" text="Quitter" />
+                              <TextField fx:id="textAnonce" layoutX="39.0" layoutY="39.0" />
+                              <TextField fx:id="textsupprimer" layoutX="39.0" layoutY="82.0" />
+                              <Button fx:id="demandeAnn" layoutX="231.0" layoutY="127.0" mnemonicParsing="false" onAction="#demandeAnnonce" prefHeight="26.0" prefWidth="131.0" text="demande annonce" />
+                              <TextField fx:id="textDemande" layoutX="39.0" layoutY="127.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
